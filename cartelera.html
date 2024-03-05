@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cine Cultura</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      position: relative; /* Asegura que el contenido no se superponga al footer */
+      padding-bottom: 100px; /* Altura del footer */
+    }
+    .movie-card {
+      background-color: #000;
+      border: 1px solid #00f;
+      color: #fff;
+      margin-bottom: 20px;
+      position: relative; /* Para posicionar el botón */
+    }
+    .movie-card-header {
+      background-color: #00f;
+      color: #fff;
+    }
+    .movie-img {
+      width: 100%;
+      height: auto;
+    }
+    /* Estilo para el botón en la esquina superior derecha */
+    .btn-view {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    /* Estilo para el footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Animaciones para las opciones del navbar */
+    .navbar-dark .navbar-nav .nav-link {
+      transition: color 0.3s ease-in-out;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffc107;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="img/cinecult.png" alt="Cine Cultura Logo" style="width: auto; height: 30px;">
+        Cine Cultura
+      </a>
+      <!-- Botón de alternancia para dispositivos móviles -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Elementos del navbar -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cartelera</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+        <!-- Enlace a la dulcería -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="dulecria.html">Dulcería</a>
+          </li>
+        </ul>
+        <!-- Fin del enlace a la dulcería -->
+      </div>
+    </div>
+  </nav>
+  <!-- Fin de la Navbar -->
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 col-lg-4">
+        <div class="movie-card border border-primary rounded">
+          <div class="movie-card-header p-2">
+            <h5 class="mb-0">Doom Ramon</h5>
+          </div>
+          <img src="img/DoomRamon.jpg" alt="Película 1" class="movie-img">
+          <div class="movie-card-body p-2">
+            <p class="mb-0">Don Ramón se adentra en el infierno para escapar de la renta del Señor Barriga.</p>
+            <a href="Peliculas/Doom.html" class="btn btn-primary btn-view">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="movie-card border border-primary rounded">
+          <div class="movie-card-header p-2">
+            <h5 class="mb-0">God of War Ragnarök</h5>
+          </div>
+          <img src="img/GOW.jpeg" alt="Película 2" class="movie-img">
+          <div class="movie-card-body p-2">
+            <p class="mb-0">El espartano Kratos, se adentra a la aventura de llevar el Ragnarök acabo para poder ponerle a fin a la tiranía de Odín.
+            </p>
+            <a href="Peliculas/GOW.html" class="btn btn-primary btn-view">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="movie-card border border-primary rounded">
+          <div class="movie-card-header p-2">
+            <h5 class="mb-0">Alastor</h5>
+          </div>
+          <img src="img/Alastor.jpg" alt="Película 1" class="movie-img">
+          <div class="movie-card-body p-2">
+            <p class="mb-0">Alastor el Demonio de la Radio, misterioso y carismático que ha dejado tantas dudas en la mayoría de quienes lo han conocido, descubra como fue su historia en vida y el camino que recorrió en su descenso al infierno en esta producción.</p>
+            <a href="Peliculas/Doom.html" class="btn btn-primary btn-view">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="movie-card border border-primary rounded">
+          <div class="movie-card-header p-2">
+            <h5 class="mb-0">Bloodborne</h5>
+          </div>
+          <img src="img/blood.jpeg" alt="Película 1" class="movie-img">
+          <div class="movie-card-body p-2">
+            <p class="mb-0">"Bloodborne: The Old Hunters" lleva a los cazadores a las profundidades de la oscuridad de Yharnam, donde se enfrentan a nuevos horrores y desafíos en una búsqueda desesperada de respuestas.</p>
+            <a href="Peliculas/bloodborne.html" class="btn btn-primary btn-view">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repite este bloque para las otras películas -->
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Derechos de autor. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- Fin del footer -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para actualizar el año en el footer -->
+  <script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+  </script>
+</body>
+</html>

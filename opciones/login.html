@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cine Cultura</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      position: relative;
+      padding-bottom: 100px;
+    }
+    .movie-card {
+      background-color: #000;
+      border: 1px solid #00f;
+      color: #fff;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .movie-card-header {
+      background-color: #00f;
+      color: #fff;
+    }
+    .movie-img {
+      width: 100%;
+      height: auto;
+    }
+    .btn-view {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      transition: color 0.3s ease-in-out;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffc107;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #333;
+      transition: all 0.3s;
+      z-index: 1;
+    }
+    .sidebar ul {
+      padding: 0;
+      list-style: none;
+    }
+    .sidebar ul li {
+      padding: 10px;
+    }
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .sidebar ul li:hover {
+      background: #555;
+    }
+    .open-sidebar {
+      left: 0;
+    }
+    .main-content {
+      transition: margin-left 0.3s;
+    }
+    /* Estilos específicos para el formulario de inicio de sesión */
+    .login-container form {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #000; /* Ajuste de color de texto */
+    }
+    .login-container label {
+      color: #000; /* Ajuste de color de texto */
+    }
+    .login-container .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .login-container .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="../img/cinecult.png" alt="Cine Cultura Logo" style="width: auto; height: 30px;">
+        Cine Cultura
+      </a>
+      <!-- Botón de alternancia para dispositivos móviles -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Elementos del navbar -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cartelera</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../dulecria.html">Dulcería</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Fin de la Navbar -->
+
+  <!-- Sidebar -->
+   <!-- Button to open sidebar -->
+   <button class="btn btn-primary mt-3 ml-3" onclick="toggleSidebar()">Opciones</button>
+
+   <!-- Sidebar -->
+   <div class="sidebar" id="sidebar">
+     <style>
+       .sidebar {
+         z-index: 1;
+       }
+     </style>
+     <!-- Button to close sidebar -->
+     <span class="close-btn" onclick="toggleSidebar()">X</span>
+     <ul>
+       <li><a href="#">Login</a></li>
+       <li><a href="#">Ver Boletos</a></li>
+     </ul>
+   </div>
+  <!-- End Sidebar -->
+
+  <div class="container mt-5">
+
+    <!-- Formulario de inicio de sesión -->
+    <div class="login-container">
+      <h2 class="text-center mb-4">Iniciar sesión</h2>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      </form>
+    </div>
+    <!-- Fin del formulario de inicio de sesión -->
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Derechos de autor. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- Fin del footer -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para actualizar el año en el footer -->
+  <script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+  </script>
+
+  <!-- Script para el sidebar -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("open-sidebar");
+    }
+  </script>
+</body>
+</html>

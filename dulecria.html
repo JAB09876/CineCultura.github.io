@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cine Cultura - Dulcería</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      transition: color 0.3s ease-in-out;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffc107;
+    }
+    .product-card {
+      background-color: #000;
+      border: 1px solid #00f;
+      color: #fff;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .product-card-header {
+      background-color: #00f;
+      color: #fff;
+    }
+    .product-card-body img {
+      width: 100%;
+      height: 200px; /* Establecer la altura deseada */
+      object-fit: cover; /* Para que las imágenes se ajusten dentro de sus contenedores sin deformarse */
+    }
+    /* Estilo para el footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Estilo para el sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #333;
+      transition: all 0.3s;
+    }
+
+    .sidebar ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 10px;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sidebar ul li:hover {
+      background: #555;
+    }
+
+    .open-sidebar {
+      left: 0;
+    }
+
+    .main-content {
+      transition: margin-left 0.3s;
+    }
+
+    /* Estilo para el botón de cerrar el sidebar */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="img/cinecult.png" alt="Cine Cultura Logo" style="width: auto; height: 30px;">
+      Cine Cultura
+    </a>
+    <!-- Botón de alternancia para dispositivos móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Elementos del navbar -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cartelera</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+      </ul>
+      <!-- Enlace a la dulcería -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="dulecria.html">Dulcería</a>
+        </li>
+      </ul>
+      <!-- Fin del enlace a la dulcería -->
+    </div>
+  </div>
+</nav>
+<!-- Fin de la Navbar -->
+
+  <!-- Button to open sidebar -->
+  <button class="btn btn-primary mt-3 ml-3" onclick="toggleSidebar()">Opciones</button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <style>
+      .sidebar {
+        z-index: 1;
+      }
+    </style>
+    <!-- Button to close sidebar -->
+    <span class="close-btn" onclick="toggleSidebar()">X</span>
+    <ul>
+      <li><a href="opciones/login.html">Login</a></li>
+      <li><a href="#">Ver Boletos</a></li>
+    </ul>
+  </div>
+  <!-- End Sidebar -->
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-card-header p-2">
+            <h5 class="mb-0">Palomitas</h5>
+          </div>
+          <div class="product-card-body p-2">
+            <img src="img/por_que_comemos_palomitas_en_el_cine_crop1525230908607.jpg_1902800913.jpg" alt="Palomitas" class="img-fluid mb-3">
+            <p class="mb-0">Deliciosas palomitas de maíz.</p>
+            <p class="mb-0">Precio: $5.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-card-header p-2">
+            <h5 class="mb-0">Refresco</h5>
+          </div>
+          <div class="product-card-body p-2">
+            <img src="img/coca.jpeg" alt="Refresco" class="img-fluid mb-3">
+            <p class="mb-0">Refrescante bebida de cola.</p>
+            <p class="mb-0">Precio: $3.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="product-card">
+          <div class="product-card-header p-2">
+            <h5 class="mb-0">Nachos con Queso</h5>
+          </div>
+          <div class="product-card-body p-2">
+            <img src="img/nachos.jpg" alt="Nachos con Queso" class="img-fluid mb-3">
+            <p class="mb-0">Deliciosos nachos con queso derretido.</p>
+            <p class="mb-0">Precio: $4.50</p>
+          </div>
+        </div>
+      </div>
+      <!-- Repite este bloque para los otros productos -->
+    </div>
+  </div>
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Derechos de autor. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- Fin del footer -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para actualizar el año en el footer -->
+  <script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("open-sidebar");
+    }
+  </script>
+</body>
+</html>
